@@ -12,7 +12,8 @@ joker --lint --working-dir .
 target_files=$(git ls-files | grep -E '\.(cljs|clj|edn)$')
 
 for file in $target_files; do
-    joker --format $file > $file
+    joker --format $file > /tmp/joker-format
+    cat /tmp/joker-format > $file
 done
 
 exit 0

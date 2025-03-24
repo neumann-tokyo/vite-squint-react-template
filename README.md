@@ -2,4 +2,5 @@
 
 * [x] vite
 * [x] react
-* [ ] squint
+* [x] squint
+* [x] [joker](https://github.com/candid82/joker)

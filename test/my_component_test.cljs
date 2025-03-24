@@ -1,6 +1,6 @@
 (ns my-component-test
-  (:require ["vitest" :refer [expect test]]
-            [my-lib :refer [adder]]))
+  (:require [my-lib :refer [adder]]
+            ["vitest" :refer [expect test]]))
 
 (test "my-component adder works"
       (fn []

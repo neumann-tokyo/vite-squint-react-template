@@ -12,6 +12,9 @@ dist
 dist-ssr
 *.local
 
+.clj-kondo
+.lsp
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

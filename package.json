@@ -2,22 +2,27 @@
     "name": "vite-squint-react-template",
     "private": true,
     "version": "0.0.0",
-    "type": "module",
+    "engines": {
+        "pnpm": ">=8.0.0"
+    },
     "scripts": {
         "check": "bash ./lint-format.bash",
         "vite": "vite --config=vite.config.js public",
-        "squint": "squint watch --repl true",
-        "dev": "concurrently \"npm run vite\" \"npm run squint\"",
-        "build": "squint build && vite --config vite.config.js build public",
+        "squint": "squint watch",
+        "dev": "concurrently \"pnpm run vite\" \"pnpm run squint\"",
+        "build:squint": "squint compile",
+        "build:vite": "vite --config vite-build.config.js build",
+        "build": "pnpm run build:squint && pnpm run build:vite",
+        "preview": "http-server dist",
         "test:watch:squint": "squint watch --paths src test --output-dir public/test",
         "test:watch:vite": "vitest --config=vite.config.js",
-        "test:watch": "concurrently \"npm run test:watch:squint\" \"npm run test:watch:vite\""
+        "test:watch": "concurrently \"pnpm run test:watch:squint\" \"pnpm run test:watch:vite\""
     },
     "devDependencies": {
         "@vitejs/plugin-react": "^4.3.2",
         "concurrently": "^9.1.2",
+        "http-server": "^14.1.1",
         "lefthook": "^1.11.4",
-        "rollup-plugin-visualizer": "^5.12.0",
         "vite": "^5.4.9",
         "vitest": "^2.1.3"
     },
